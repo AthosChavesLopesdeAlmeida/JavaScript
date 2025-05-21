@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>País</title>
+</head>
+<body>
+  <h1>Estrangeiro ou Brasileiro</h1>
+  <input type="text" name="nac" id="nac" placeholder="Que país você nasceu?">
+  <input type="button" value="Verificar" onclick="verificar()">
+  <div id="res"></div>
+
+  <script>
+    function verificar(){
+      var nac = window.document.querySelector('input#nac')
+      var res = window.document.querySelector('div#res')
+
+      if(nac == 'brasil' || nac == 'Brasil') {
+        res.innerHTML = `Se você nasceu em ${nac.value} você é brasileiro`
+      }
+      else {
+        res.innerHTML = `Se você nasceu em ${nac.value} você é estrangeiro`
+      }
+      //nac.value foi necessário para pegar o valor do input e não o input em si
+    }
+  </script>
+</body>
+</html>
